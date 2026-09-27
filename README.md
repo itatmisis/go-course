@@ -12,8 +12,8 @@
 
 | № | Дата | Тема | Содержание |
 |---|---|---|---|
-| 1 | 28.09.26 | Golang 1 | Переменные, функции, массивы, мапы |
-| 2 | 29.09.26 | Golang 2 | Структуры, интерфейсы |
+| 1 | 28.09.26 | Golang 1 | Переменные, примитивы, управление потоком, функции, ошибки, slice, map, defer |
+| 2 | 29.09.26 | Golang 2 | Struct, value vs pointer, методы, интерфейсы, any, tags, marshal/unmarshal. |
 | 3 | 05.10.26 | WEB 1 | HTTP, REST API, HTTP client, фреймворк go-echo |
 | 4 | 06.10.26 | WEB 2 | go-echo middleware, go-echo validators |
 | 5 | 12.10.26 | БД 1 | Postgres: Create, Insert, Select, Update, Delete |
