@@ -63,6 +63,8 @@ func run(ctx context.Context, logger *slog.Logger) error {
 	go func() {
 		<-ctx.Done()
 
+		logger.WarnContext(ctx, "server.shutdown.begin")
+
 		shutdownCtx, cancel := context.WithTimeout(context.WithoutCancel(ctx), shutdownTimeout)
 		defer cancel()
 
