@@ -83,7 +83,7 @@ apt update
 apt install <package>
 
 # Установит много полезных утилит: git, curl, make, tmux, screen и т. д.
-apt install htop neofetch tmux git curl wget neovim screen build-essential
+apt install htop neofetch tmux git curl wget neovim screen
 
 # Обновить все пакеты
 apt upgrade
@@ -209,8 +209,8 @@ screen -r <sessionId> # подключиться к сессии по айди <
 (ctrl + a) + (d) # отключиться от сессии
 ```
 
-Важное уточнение: `screen` — не панацея, в больших проектах используются более сложные вещи — Docker, K8S,
-SystemD и т. д. Docker разберём на следующей лекции.
+Важное уточнение: `screen` — не панацея, в больших проектах используются более сложные вещи — Docker, K8S, SystemD и т. д. 
+Docker разберём на следующей лекции.
 
 ### 4.2. Зависимости: `go.mod` и `go.sum`
 
