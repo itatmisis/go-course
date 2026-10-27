@@ -1,0 +1,46 @@
+services:
+  backend:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      DATABASE_URL: "postgres://tracker:tracker@postgres:5432/tracker?sslmode=disable"
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: tracker
+      POSTGRES_USER: tracker
+      POSTGRES_PASSWORD: tracker
+      PGUSER: tracker
+      PGPASSWORD: tracker
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    labels:
+      - "autoheal=true"
+    restart: unless-stopped
+    volumes:
+      - ./volumes/pg/:/var/lib/postgresql/data/
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          cpus: '2.00'
+          memory: 4000M
+  migrations:
+    image: ghcr.io/kukymbr/goose-docker:3.28.0
+    environment:
+      - GOOSE_DRIVER=postgres
+      - GOOSE_DBSTRING=host=postgres port=5432 user=tracker password=tracker dbname=tracker
+    volumes:
+      - ./migrations:/migrations
+    depends_on:
+      postgres:
+        condition: service_healthy

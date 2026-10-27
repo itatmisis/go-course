@@ -552,8 +552,8 @@ const msg = `
 }
 `
 type team struct {
-	Name  string //`json:"team_name"` // - тэг
-	Place int    //`json:"place"`
+	name  string `json:"team_name"` // - тэг
+	place int    `json:"place"`
 }
 
 func main(){
@@ -566,7 +566,7 @@ func main(){
 	
 	fmt.Println(team1)
 	
-	team1.Place = 2
+	team1.place = 2
 	
 	team2, err := json.Marshal(&team1)
 	if err != nil {
@@ -579,8 +579,8 @@ func main(){
 ```
 
 ```golang-run-result
-{ 1}
-{"Name":"","Place":2}
+{ 0}
+{}
 
 ```
 
