@@ -191,6 +191,7 @@
   },
   "active": "54eb6b8b7bf27c2b",
   "lastOpenFiles": [
+    "project/volumes/pg/pgdata/base/1/pg_internal.init",
     "project/volumes/pg/pgdata/global/pg_internal.init",
     "project/volumes/pg/pgdata/base/5/pg_internal.init",
     "project/volumes/pg/pgdata/base/16384/16414",
@@ -201,7 +202,6 @@
     "project/volumes/pg/pgdata/base/16384/16400",
     "project/volumes/pg/pgdata/base/16384/16398",
     "project/volumes/pg/pgdata/base/16384/16397",
-    "project/volumes/pg/pgdata/base/16384/16396",
     "lections/07 DEPLOY/linux.webp",
     "lections/07 DEPLOY/deploy1.md",
     "lections/08 DEPLOY/deploy2.md"
