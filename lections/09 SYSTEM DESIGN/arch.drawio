@@ -1,0 +1,134 @@
+<mxfile host="65bd71144e">
+    <diagram id="HFyz7W0NQZSc2uQ8pMx1" name="Page-1">
+        <mxGraphModel dx="1986" dy="1663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="35" value="&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;Сервис бронирования получает запрос,&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;сохраняет бронь комнаты в своей БД&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;и должен отправить запрос на оплату в платёжный сервис.&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;Сервисы могут падать,&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;сеть может быть недоступна,&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;а ответ&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;—&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;потеряться.&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;Как не потерять запрос на оплату и не списать деньги дважды при повторной попытке?&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="10" y="-10" width="500" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="BookService" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="190" width="650" height="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="books&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;div&gt;id uuid&amp;nbsp;&lt;/div&gt;&lt;div&gt;created_at timestamp&lt;/div&gt;&lt;div&gt;user_id uuid&amp;nbsp;&lt;/div&gt;&lt;div&gt;room_id uuid&lt;/div&gt;&lt;div&gt;status text&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;mail_sent bool&amp;nbsp;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;align=left;" vertex="1" parent="36">
+                    <mxGeometry x="25" y="190" width="130" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" style="edgeStyle=none;html=1;" edge="1" parent="36" source="42" target="41">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="36">
+                    <mxGeometry x="30" y="55" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="kafka-consumer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="36">
+                    <mxGeometry x="217.5" y="180" width="105" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" style="edgeStyle=none;html=1;" edge="1" parent="36" source="53" target="41">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="600" y="340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="67" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="36" source="62" target="53">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="kafka" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="36">
+                    <mxGeometry x="190" y="40" width="160" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="36" source="42" target="62">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.envelope_(empty);" vertex="1" parent="36">
+                    <mxGeometry x="460" y="260" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" style="edgeStyle=none;html=1;entryX=0.004;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="36" source="53" target="75">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="270" y="297"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="68" value="" style="shape=message;html=1;html=1;outlineConnect=0;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" vertex="1" parent="36">
+                    <mxGeometry x="210" y="100" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="PaymentService" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="790" y="355" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="39" target="42">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="POST /books&lt;div&gt;GET /books/&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="40">
+                    <mxGeometry x="-0.1863" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="Client" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/laptop_client.svg;" vertex="1" parent="1">
+                    <mxGeometry x="-240" y="230" width="81" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="53" target="37">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="520" y="270" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="47" value="POST /charge&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;InvoiceId = books.id&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="46">
+                    <mxGeometry x="-0.0422" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-47" y="5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="50" value="1. Клиент - отправляет запрос&lt;div&gt;2. Бекенд кладет бронь в books PAYMENT_PENDING&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;3. Бекенд отправляет запрос на списание денег в PaymentService&lt;/span&gt;&lt;/div&gt;&lt;div&gt;4. Если ок - бекенд подптверждает бронь в books (CONFIRMED)&lt;br&gt;5. Если нет - переводим в CANCELED&lt;/div&gt;&lt;div&gt;6. Возвращаем клиенту ОК&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="600" width="480" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" style="edgeStyle=none;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="77" target="80">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="POST /jwk" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="93">
+                    <mxGeometry x="0.3436" y="2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="77" value="OrderService" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="-520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="FriendService" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="-410" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="LibraryService" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="-300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" style="edgeStyle=none;html=1;" edge="1" parent="1" source="80" target="81">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="IAM" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="-710" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="users" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+                    <mxGeometry x="890" y="-745" width="150" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" style="edgeStyle=none;html=1;" edge="1" parent="1" source="84" target="80">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="POST /register&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="85">
+                    <mxGeometry x="0.0567" y="-3" relative="1" as="geometry">
+                        <mxPoint x="23" y="-23" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="87" value="POST /order" style="edgeStyle=none;html=1;" edge="1" parent="1" source="84" target="77">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" style="edgeStyle=none;html=1;" edge="1" parent="1" source="84" target="78">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" style="edgeStyle=none;html=1;" edge="1" parent="1" source="84" target="79">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.mobile_client;fillColor=#D2D3D3;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="-521.5" width="40.5" height="63" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="&lt;span style=&quot;font-family: -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Два сотрудника открыли одну карточку в таск-трекере и независимо её редактируют. Первый сохранил изменения. Второй отправляет свою устаревшую копию.&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-family: -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Как предотвратить незаметную перезапись и сообщить второму сотруднику, что карточка изменилась?&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;create table tickets(&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp; &amp;nbsp; id uuid pk,&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp; &amp;nbsp; created_at timetstampz not null,&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: -apple-system, system-ui, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;&amp;nbsp; &amp;nbsp; updated_at timetstampz not null,&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp; &amp;nbsp; body text not null&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;)&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;GET /tickets/:id - select * from tickets where id = :id.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: -apple-system, system-ui, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;PUT /tickets/:id - update tickets set updated_at = now(), body = :body where id = :id and updated_at = :updated_at&amp;nbsp;&lt;/span&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-family: -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;10:00 A: GET /tickets/10 (updated_at=09:00)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: -apple-system, system-ui, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;10:05 B: GET /tickets/10&amp;nbsp;&lt;/span&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot; color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: -apple-system, system-ui, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px; background-color: transparent;&quot;&gt;(updated_at=09:00)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: -apple-system, system-ui, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;10:10 A: PUT /tickets/10 {&quot;updated_at&quot;: 09:00, &quot;body&quot;: &quot;ПРИВЕТ&quot;} -&amp;gt; 200&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: -apple-system, system-ui, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: -apple-system, system-ui, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px;&quot;&gt;10:15 B: PUT /tickets/10&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: -apple-system, system-ui, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px; background-color: transparent;&quot;&gt;{&quot;updated_at&quot;: 09:00, &quot;body&quot;: &quot;ПРИВЕТ&quot;} -&amp;gt; 200&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: -apple-system, system-ui, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px; background-color: transparent;&quot;&gt;-&amp;gt; 409 CONFLICT&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-family: -apple-system, system-ui, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px; background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;if result.RowCount == 0{&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;result := exec(&quot;select * from tickets where id = :id&quot;)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;if result == nil{&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;return&amp;nbsp;&lt;span style=&quot;color: rgb(63, 63, 63); font-family: -apple-system, system-ui, &amp;quot;Segoe WPC&amp;quot;, &amp;quot;Segoe UI&amp;quot;, system-ui, Ubuntu, &amp;quot;Droid Sans&amp;quot;, sans-serif; font-size: 14px; background-color: transparent;&quot;&gt;errors.New(&quot;ticket not found&quot;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp; &amp;nbsp; return errors.New(&quot;update conflicted, please retry&quot;)&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font face=&quot;-apple-system, system-ui, Segoe WPC, Segoe UI, system-ui, Ubuntu, Droid Sans, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;}&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry y="1090" width="780" height="390" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="&amp;nbsp;ОПТИМИСТИЧНЫЕ БЛОКИРОВКИ" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="1190" width="195" height="70" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

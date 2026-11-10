@@ -1,0 +1,50 @@
+<mxfile host="65bd71144e">
+    <diagram id="HFyz7W0NQZSc2uQ8pMx1" name="Page-1">
+        <mxGraphModel dx="2037" dy="1688" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="35" value="&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;Сервис бронирования получает запрос,&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;сохраняет бронь комнаты в своей БД&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;и должен отправить запрос на оплату в платёжный сервис.&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;Сервисы могут падать,&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;сеть может быть недоступна,&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;а ответ&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;—&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;потеряться.&lt;/span&gt;&lt;span style=&quot;color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;box-sizing: border-box; color: rgb(8, 8, 8); font-family: Helvetica, Arial, freesans, sans-serif; font-size: 13px; background-color: rgb(255, 255, 255);&quot;&gt;Как не потерять запрос на оплату и не списать деньги дважды при повторной попытке?&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="10" y="-10" width="500" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="BookService" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="200" width="500" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="books&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="36">
+                    <mxGeometry x="80" y="200" width="130" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" style="edgeStyle=none;html=1;" edge="1" parent="36" source="42" target="41">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="service" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="36">
+                    <mxGeometry x="50" y="115" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="PaymentService" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="305" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="39" target="42">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="POST /books" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="40">
+                    <mxGeometry x="-0.1863" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="Client" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/laptop_client.svg;" vertex="1" parent="1">
+                    <mxGeometry x="-160" y="290" width="81" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" style="edgeStyle=none;html=1;" edge="1" parent="1" source="42" target="37">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="Снимает деньги" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="46">
+                    <mxGeometry x="-0.0422" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="50" value="1. Клиент - отправляет запрос&lt;div&gt;2. Бекенд кладет бронь в books PAYMENT_PENDING&lt;br&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;3. Бекенд отправляет запрос на списание денег в PaymentService&lt;/span&gt;&lt;/div&gt;&lt;div&gt;4. Если ок - бекенд подптверждает бронь в books (CONFIRMED)&lt;/div&gt;&lt;div&gt;5. Бекенд возвращает клиенту ОК&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="490" width="480" height="130" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
