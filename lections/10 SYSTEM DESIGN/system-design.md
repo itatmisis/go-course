@@ -22,14 +22,11 @@
 - Репликация и шардирование через Redis Cluster.
 - TTL ключей, политики вытеснения, атомарные команды.
 
-### Kafka
+### ClickHouse
 
-- Распределённый журнал событий: топики, партиции, репликация.
-- Хранение по retention: условные X дней и/или лимит объёма; возможны бессрочное хранение и compaction.
-- Удаление по времени происходит сегментами, поэтому X дней — не точный срок удаления каждого сообщения.
-- Consumer groups читают независимо, у каждой группы свои offsets.
-- Внутри обычной consumer group партиции распределены между консьюмерами; порядок — в пределах партиции.
-- Чтение не удаляет сообщения; доступные данные можно перечитать.
+- Колоночная OLAP-БД: аналитика, агрегации и сканирование больших объёмов данных.
+- Подходит для тяжёлых аналитических запросов и фоновых расчётов; также используется для интерактивной аналитики.
+- Сжатие, пакетная загрузка, партиционирование, шардирование и репликация.
 
 ## 2. Задача: регионы и S3
 
@@ -87,7 +84,7 @@
 - [WAL PostgreSQL](https://www.postgresql.org/docs/current/wal.html)
 - [Типы данных Redis](https://redis.io/docs/latest/develop/data-types/)
 - [Персистентность Redis](https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/)
-- [Настройки топиков Kafka](https://kafka.apache.org/documentation/#topicconfigs)
+- [Колоночное хранение ClickHouse](https://clickhouse.com/docs/faq/general/columnar-database)
 - [Партиционирование PostgreSQL](https://www.postgresql.org/docs/current/ddl-partitioning.html)
 - [YDB](https://ydb.tech/docs/en/)
 - [CockroachDB](https://www.cockroachlabs.com/docs/stable/architecture/overview.html)
